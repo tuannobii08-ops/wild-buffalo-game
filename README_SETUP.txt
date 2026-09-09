@@ -87,3 +87,17 @@ V13 PREMIUM CABINET UI
 - Free Game làm cả cabinet phát sáng để đồng bộ cinematic.
 - Mobile layout vẫn responsive, tự giảm bớt chi tiết nặng.
 - Firebase, realtime telemetry và admin.html giữ nguyên.
+
+V14 PREMIUM SMOOTH
+------------------
+- Thiết kế cabinet sạch hơn, ít chi tiết rối, hierarchy rõ hơn.
+- Giảm/loại bỏ filter + shadow animation chạy liên tục trên vùng lớn.
+- Tắt ambient particles liên tục.
+- Canvas FX DPR tối ưu: mobile = 1, desktop tối đa 1.2.
+- Giới hạn particle: ~150 mobile / ~280 desktop.
+- Coin/pháo hoa được làm lớn và rõ hơn nhưng giảm số lượng.
+- Free Game dùng shockwave + Buffalo hero + fireworks có chọn lọc thay vì particle flood.
+- Jackpot/Bonus vẫn cinematic nhưng giảm duplicate particle emitters.
+- Stampede giảm số DOM image cùng lúc.
+- Mobile được tối ưu mạnh để tránh tụt FPS.
+- Firebase/Admin/Realtime giữ nguyên.

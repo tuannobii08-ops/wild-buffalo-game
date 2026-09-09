@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Buffalo Sunset Gold — V13 Premium Cabinet</title>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Buffalo Sunset Gold — V14 Premium Smooth</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#100503;color:#fff;overflow-x:hidden}body{background:radial-gradient(circle at 50% 18%,#ffcf45 0,#d35b18 22%,#5e140b 52%,#110604 82%) fixed}
 #sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,rgba(255,208,83,.10),transparent 35%,rgba(0,0,0,.25) 70%)}
@@ -601,6 +601,192 @@ body.bonusMode .featureChipHot{
  .premiumControls{margin:0 2px;padding:3px}
 }
 
+
+/* =========================================================
+   V14 — CLEAN PREMIUM + PERFORMANCE OVERRIDE
+   ========================================================= */
+:root{
+ --v14-gold:#e8b24b;
+ --v14-gold2:#ffdda0;
+ --v14-panel:#21100b;
+ --v14-panel2:#100706;
+ --v14-border:#8f5927;
+}
+body{
+ background:
+   radial-gradient(circle at 50% 3%,#f1b75b 0,rgba(196,84,28,.78) 18%,rgba(63,15,11,.96) 46%,#0d0505 78%) fixed;
+}
+#machine{filter:none!important}
+#machine:after{animation:none!important;filter:none!important;opacity:.65!important}
+.cabinetGlow{animation:none!important;filter:none!important;opacity:.36!important}
+.ambientDust{display:none!important}
+.marqueeBulbs{animation:v14Lamp 2.6s ease-in-out infinite alternate!important;filter:none!important}
+@keyframes v14Lamp{from{opacity:.56}to{opacity:.94}}
+.spin{animation:none!important}
+.spin:hover{transform:scale(1.025)}
+body.fxBusy .marqueeBulbs,
+body.fxBusy .featureChipHot,
+body.fxBusy .freeBanner{animation-play-state:paused!important}
+
+.premiumTop{
+ min-height:116px!important;
+ background:linear-gradient(180deg,rgba(59,19,12,.98),rgba(20,7,6,.99))!important;
+ border-color:#9b632d!important;
+ box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 1px rgba(255,229,170,.13)!important;
+}
+.cabinetMarquee{
+ background:linear-gradient(180deg,#5a1e0e,#2c0b08)!important;
+ border-color:#b77a35!important;
+ box-shadow:inset 0 0 0 1px rgba(255,224,154,.12),0 5px 16px #0005!important;
+}
+.logo{
+ font-size:46px!important;
+ letter-spacing:-.035em!important;
+ text-shadow:0 4px 0 #4e1708,0 8px 14px #0009!important;
+ filter:none!important
+}
+.logoTag{color:#d4aa68!important;letter-spacing:.12em!important}
+.jackpotDeck{
+ background:#100606!important;
+ border-color:#5f351d!important;
+ box-shadow:inset 0 1px rgba(255,225,161,.08)!important
+}
+.jp{
+ min-height:78px!important;
+ background:linear-gradient(180deg,#2c0b08,#120504)!important;
+ box-shadow:inset 0 1px rgba(255,232,170,.10),0 3px 8px #0005!important;
+}
+.jp.grand{border-color:#d99a3a!important}
+.jp.major{border-color:#9c6dc7!important}
+.jp.minor{border-color:#547ca6!important}
+.jp.mini{border-color:#608f68!important}
+.jp span{font-weight:1000!important}
+
+.stage{
+ background:linear-gradient(180deg,#2b0d08,#130606)!important;
+ border-color:#75431f!important;
+ box-shadow:0 11px 28px rgba(0,0,0,.42),inset 0 1px rgba(255,230,169,.08)!important
+}
+.leftArt,.collectPanel{
+ background:linear-gradient(180deg,#321008,#160604)!important;
+ border-color:#78471f!important;
+ box-shadow:inset 0 1px rgba(255,230,165,.09),0 4px 12px #0004!important
+}
+.reelCab{
+ border-color:#c39245!important;
+ background:linear-gradient(180deg,#9a6528,#4d210c)!important;
+ box-shadow:0 10px 25px #0008,0 0 0 2px #3b1508,inset 0 1px #f5d48a!important
+}
+.collectRow{
+ background:#160706!important;
+ border-color:#4e2c1b!important;
+ box-shadow:none!important
+}
+.collectRow.done{
+ background:linear-gradient(90deg,#63380f,#281006)!important;
+ border-color:#a96c2c!important;
+ box-shadow:inset 0 0 10px rgba(255,189,64,.10)!important
+}
+
+.status{
+ background:#120605!important;
+ border-color:#71431e!important;
+ box-shadow:inset 0 1px rgba(255,231,169,.08),0 4px 12px #0005!important
+}
+.featureStrip{
+ background:#0d0605!important;
+ border-color:#4c2c19!important;
+ box-shadow:none!important
+}
+.featureChip{
+ background:#170907!important;
+ border-color:#4c2e1c!important
+}
+.featureChipHot{
+ border-color:#9f6327!important;
+ box-shadow:inset 0 0 9px rgba(255,181,48,.08)!important
+}
+.chipIcon{filter:none!important}
+
+.premiumControls{
+ background:linear-gradient(180deg,#2b100a,#100605)!important;
+ border-color:#7e4a22!important;
+ box-shadow:0 10px 26px #0008,inset 0 1px rgba(255,232,178,.10)!important
+}
+.premiumControls .ctl{
+ background:linear-gradient(180deg,#15110e,#090807)!important;
+ border-color:#4d3825!important;
+ box-shadow:inset 0 1px rgba(255,235,195,.06)!important
+}
+.iconBtn,.smallBtn,.autoBtn{
+ background:linear-gradient(180deg,#302317,#15100b)!important;
+ border-color:#72502c!important;
+ box-shadow:inset 0 1px rgba(255,233,184,.14),0 2px 5px #0006!important
+}
+.spin{
+ border-color:#f0c46c!important;
+ background:radial-gradient(circle at 40% 25%,#ff9b4b,#df4016 35%,#7d1108 72%)!important;
+ box-shadow:inset 0 0 0 3px #8f3511,0 0 0 3px #43200c,0 6px 12px #0008!important
+}
+
+/* Cinematic impact comes from composited layers, not hundreds of particles. */
+#featureFX:before{
+ filter:none!important;
+ opacity:.70!important
+}
+#featureFX.on:after{
+ content:"";
+ position:absolute;
+ width:min(88vw,880px);aspect-ratio:1;
+ left:50%;top:50%;
+ transform:translate(-50%,-50%);
+ border-radius:50%;
+ border:2px solid rgba(255,224,121,.68);
+ box-shadow:
+   0 0 0 14px rgba(255,190,45,.10),
+   0 0 0 36px rgba(255,145,21,.07),
+   0 0 70px rgba(255,185,48,.32);
+ animation:v14Shock 1.15s ease-out infinite;
+ pointer-events:none
+}
+@keyframes v14Shock{
+ from{transform:translate(-50%,-50%) scale(.70);opacity:.9}
+ to{transform:translate(-50%,-50%) scale(1.20);opacity:0}
+}
+#bonusBuffaloHero{
+ filter:drop-shadow(0 14px 16px rgba(0,0,0,.65)) drop-shadow(0 0 18px rgba(255,190,55,.48))!important;
+ will-change:transform,opacity
+}
+.bonusBuffaloEcho,.stampede{will-change:transform,opacity;filter:none!important}
+.fireworkFlash{box-shadow:0 0 18px #fff6c8,0 0 42px #ffad25!important}
+#fxCanvas{will-change:contents}
+.v12Hit{will-change:transform,filter}
+.screenFlash{will-change:opacity}
+
+/* Small wins feel polished instead of flooding the screen. */
+.miniWinFx{
+ background:linear-gradient(180deg,rgba(52,16,8,.95),rgba(17,6,5,.96))!important;
+ border:1px solid #ca8a35!important;
+ box-shadow:0 10px 26px #0008,0 0 22px rgba(255,184,47,.16)!important;
+ backdrop-filter:none!important
+}
+.mwLabel{letter-spacing:.16em!important;color:#e9b957!important}
+.mwAmount{color:#fff1ba!important}
+
+/* Mobile: aggressively avoid costly visual layers. */
+@media(max-width:820px){
+ #machine{filter:none!important}
+ #machine:before{box-shadow:inset 0 0 0 1px #351006,0 8px 20px #0007!important}
+ .premiumTop,.stage,.premiumControls{box-shadow:0 5px 14px #0006!important}
+ .marqueeBulbs,.cabinetGlow{display:none!important}
+ .reelCab{box-shadow:0 5px 14px #0007,0 0 0 1px #3b1508!important}
+ #featureFX.on:after{width:105vw;box-shadow:0 0 0 10px rgba(255,190,45,.08),0 0 35px rgba(255,185,48,.25)}
+ .bonusBuffaloEcho:nth-of-type(n+3),.stampede:nth-of-type(n+4){display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .marqueeBulbs,.freeBanner,.featureChipHot{animation:none!important}
+}
+
 </style></head><body>
 <div id="nameGate">
   <div class="nameCard">
@@ -613,7 +799,7 @@ body.bonusMode .featureChipHot{
 </div>
 <div id="playerTag"></div>
 <div id="qaBadge">DEV TEST MODE · ODDS OVERRIDE</div><div id="sky"></div>
-<div id="audioGate"><div class="gateCard"><div class="gateLogo">BUFFALO SUNSET GOLD</div><p>Bấm một lần để bật âm thanh. V13 PREMIUM: giao diện máy, jackpot, bảng cược, nút điều khiển và cinematic FX đã được nâng cấp.</p><button id="enableAudio">🔊 BẬT ÂM THANH & VÀO GAME</button><div id="audioStatus">Sẵn sàng</div></div></div>
+<div id="audioGate"><div class="gateCard"><div class="gateLogo">BUFFALO SUNSET GOLD</div><p>Bấm một lần để bật âm thanh. V14 PREMIUM SMOOTH: giao diện sạch hơn, hiệu ứng cinematic mạnh nhưng tối ưu mượt hơn.</p><button id="enableAudio">🔊 BẬT ÂM THANH & VÀO GAME</button><div id="audioStatus">Sẵn sàng</div></div></div>
 <div id="machine">
  <div class="cabinetGlow" aria-hidden="true"></div>
  <div class="cabinetRail railLeft" aria-hidden="true"></div>
@@ -830,40 +1016,43 @@ function updateHUD(win=0){$('#balance').textContent=Math.floor(balance).toLocale
 function evalWins(){const b=betLevels[betIndex],hits=new Set();let total=0;for(const target of Object.keys(pay)){let cols=0,counts=[];for(let c=0;c<5;c++){let ct=0;for(let r=0;r<4;r++)if(grid[c][r]===target||grid[c][r]==='WILD')ct++;if(!ct)break;cols++;counts.push(ct)}if(cols>=3){const ways=counts.reduce((a,x)=>a*x,1),m=cols===3?1:cols===4?2.4:6;total+=b*pay[target]*ways*m/10;for(let c=0;c<cols;c++)for(let r=0;r<4;r++)if(grid[c][r]===target||grid[c][r]==='WILD')hits.add(`${c}-${r}`)}}let scatters=0;for(let c=0;c<5;c++)for(let r=0;r<4;r++)if(grid[c][r]==='SCATTER')scatters++;return{total:Math.floor(total*effectivePayoutMult()),hits,scatters}}
 function reelStart(){document.querySelectorAll('.reel').forEach(x=>x.classList.add('spinning'))}function reelStop(c){const x=document.querySelector(`.reel[data-c="${c}"]`);if(x)x.classList.remove('spinning');playSfx('stop',.82,.98+c*.012)}function fakeRoll(c){const reel=document.querySelector(`.reel[data-c="${c}"]`);if(!reel)return;reel.querySelectorAll('img').forEach(im=>im.src=ASSETS[pick()])}
 
-const fxCanvas=$('#fxCanvas'),fxCtx=fxCanvas.getContext('2d',{alpha:true});let fxP=[],fxRun=false;
-function resizeFx(){const d=Math.min(devicePixelRatio||1,1.5);fxCanvas.width=Math.max(1,innerWidth*d);fxCanvas.height=Math.max(1,innerHeight*d);fxCanvas.style.width=innerWidth+'px';fxCanvas.style.height=innerHeight+'px';fxCtx.setTransform(d,0,0,d,0,0)}addEventListener('resize',resizeFx);resizeFx();
-function makeCoin(x,y,mode='rain'){let vx=0,vy=0;if(mode==='fountain'){vx=(Math.random()-.5)*9;vy=-(8+Math.random()*10)}else if(mode==='left'){vx=6+Math.random()*8;vy=-(4+Math.random()*8)}else if(mode==='right'){vx=-(6+Math.random()*8);vy=-(4+Math.random()*8)}else{vx=(Math.random()-.5)*2.5;vy=2+Math.random()*5}fxP.push({type:'coin',x,y,vx,vy,g:.25+Math.random()*.15,s:8+Math.random()*13,r:Math.random()*6.28,vr:(.12+Math.random()*.22)*(Math.random()<.5?-1:1),life:170+Math.random()*120,max:290})}
-function makeSpark(x,y,pow=1){const a=Math.random()*Math.PI*2,d=2+Math.random()*7*pow;fxP.push({type:'spark',x,y,vx:Math.cos(a)*d,vy:Math.sin(a)*d,g:.03,s:2+Math.random()*4*pow,life:50+Math.random()*40,max:90})}
-function makeFireworkParticle(x,y,color,a,speed){fxP.push({type:'firework',x,y,px:x,py:y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,g:.055,s:1.4+Math.random()*2.5,life:58+Math.random()*34,max:92,color})}
-function fireworkBurst(x,y,color=null,count=48){const colors=['#ffd760','#fff2a8','#ff8038','#ff4f63','#71d7ff','#bd8cff','#7cff9a'],col=color||colors[Math.floor(Math.random()*colors.length)];const f=document.createElement('div');f.className='fireworkFlash';f.style.left=(x-7)+'px';f.style.top=(y-7)+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),600);for(let i=0;i<count;i++){const a=Math.PI*2*i/count+(Math.random()-.5)*.08,sp=2.8+Math.random()*6.2;makeFireworkParticle(x,y,col,a,sp)}for(let i=0;i<14;i++)makeSpark(x,y,1.8);fxLoop()}
-function fireworkShow(waves=9,duration=3300){const factor=innerWidth<720?.72:1,w=Math.max(3,Math.floor(waves*factor));for(let i=0;i<w;i++)setTimeout(()=>{const x=innerWidth*(.08+Math.random()*.84),y=innerHeight*(.09+Math.random()*.42);fireworkBurst(x,y,null,innerWidth<720?34:50)},i*(duration/Math.max(1,w)));if(waves>=8){setTimeout(()=>{fireworkBurst(innerWidth*.24,innerHeight*.26,'#ffd65b',58);fireworkBurst(innerWidth*.76,innerHeight*.24,'#ff7b3c',58)},duration*.48)}}
+const fxCanvas=$('#fxCanvas'),fxCtx=fxCanvas.getContext('2d',{alpha:true,desynchronized:true});let fxP=[],fxRun=false;
+function fxMobile(){return innerWidth<760||matchMedia('(pointer:coarse)').matches}
+function fxCap(){return fxMobile()?150:280}
+function pushFx(p){if(fxP.length<fxCap())fxP.push(p)}
+function resizeFx(){const d=fxMobile()?1:Math.min(devicePixelRatio||1,1.2);fxCanvas.width=Math.max(1,Math.floor(innerWidth*d));fxCanvas.height=Math.max(1,Math.floor(innerHeight*d));fxCanvas.style.width=innerWidth+'px';fxCanvas.style.height=innerHeight+'px';fxCtx.setTransform(d,0,0,d,0,0)}addEventListener('resize',resizeFx,{passive:true});resizeFx();
+function makeCoin(x,y,mode='rain'){let vx=0,vy=0;if(mode==='fountain'){vx=(Math.random()-.5)*8;vy=-(7+Math.random()*8)}else if(mode==='left'){vx=5+Math.random()*7;vy=-(3+Math.random()*7)}else if(mode==='right'){vx=-(5+Math.random()*7);vy=-(3+Math.random()*7)}else{vx=(Math.random()-.5)*2;vy=2+Math.random()*4}pushFx({type:'coin',x,y,vx,vy,g:.22+Math.random()*.13,s:(fxMobile()?9:11)+Math.random()*(fxMobile()?7:10),r:Math.random()*6.28,vr:(.10+Math.random()*.18)*(Math.random()<.5?-1:1),life:115+Math.random()*80,max:195})}
+function makeSpark(x,y,pow=1){const a=Math.random()*Math.PI*2,d=1.7+Math.random()*5.6*pow;pushFx({type:'spark',x,y,vx:Math.cos(a)*d,vy:Math.sin(a)*d,g:.035,s:1.5+Math.random()*3.2*pow,life:35+Math.random()*28,max:63})}
+function makeFireworkParticle(x,y,color,a,speed){pushFx({type:'firework',x,y,px:x,py:y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,g:.06,s:1.2+Math.random()*1.8,life:42+Math.random()*24,max:66,color})}
+function fireworkBurst(x,y,color=null,count=32){const colors=['#ffd760','#fff2a8','#ff8038','#ff5264','#71d7ff','#c18aff'],col=color||colors[Math.floor(Math.random()*colors.length)],c=Math.min(count,fxMobile()?22:34);const f=document.createElement('div');f.className='fireworkFlash';f.style.left=(x-7)+'px';f.style.top=(y-7)+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),460);for(let i=0;i<c;i++){const a=Math.PI*2*i/c+(Math.random()-.5)*.11,sp=2.5+Math.random()*5.2;makeFireworkParticle(x,y,col,a,sp)}for(let i=0;i<6;i++)makeSpark(x,y,1.45);fxLoop()}
+function fireworkShow(waves=5,duration=2200){const w=Math.max(2,Math.min(fxMobile()?4:7,Math.floor(waves*(fxMobile()?.62:1))));for(let i=0;i<w;i++)setTimeout(()=>{const x=innerWidth*(.12+Math.random()*.76),y=innerHeight*(.10+Math.random()*.34);fireworkBurst(x,y,null,fxMobile()?20:30)},i*(duration/Math.max(1,w)))}
 
-function fxLoop(){if(fxRun)return;fxRun=true;function f(){fxCtx.clearRect(0,0,innerWidth,innerHeight);for(let i=fxP.length-1;i>=0;i--){const p=fxP[i];p.life--;p.px=p.px??p.x;p.py=p.py??p.y;const ox=p.x,oy=p.y;p.x+=p.vx;p.y+=p.vy;p.vy+=p.g||0;p.r=(p.r||0)+(p.vr||0);const a=Math.max(0,Math.min(1,p.life/p.max));if(p.type==='coin'){const flip=.22+.78*Math.abs(Math.cos(p.r));fxCtx.save();fxCtx.translate(p.x,p.y);fxCtx.rotate(p.r*.4);fxCtx.scale(flip,1);const g=fxCtx.createRadialGradient(-p.s*.25,-p.s*.28,1,0,0,p.s);g.addColorStop(0,'#fffbd1');g.addColorStop(.18,'#ffe360');g.addColorStop(.55,'#e7a117');g.addColorStop(1,'#883801');fxCtx.globalAlpha=Math.min(1,a*1.5);fxCtx.fillStyle=g;fxCtx.strokeStyle='#fff0a0';fxCtx.lineWidth=1.4;fxCtx.beginPath();fxCtx.arc(0,0,p.s,0,Math.PI*2);fxCtx.fill();fxCtx.stroke();fxCtx.strokeStyle='#7a3d07aa';fxCtx.beginPath();fxCtx.arc(0,0,p.s*.62,0,Math.PI*2);fxCtx.stroke();fxCtx.restore()}else if(p.type==='firework'){fxCtx.save();fxCtx.globalAlpha=Math.min(1,a*1.25);fxCtx.strokeStyle=p.color;fxCtx.lineWidth=p.s;fxCtx.lineCap='round';fxCtx.shadowBlur=12;fxCtx.shadowColor=p.color;fxCtx.beginPath();fxCtx.moveTo(ox,oy);fxCtx.lineTo(p.x,p.y);fxCtx.stroke();fxCtx.fillStyle='#fff';fxCtx.beginPath();fxCtx.arc(p.x,p.y,Math.max(.7,p.s*.55*a),0,Math.PI*2);fxCtx.fill();fxCtx.restore();p.vx*=.992;p.vy*=.992}else{fxCtx.save();fxCtx.globalAlpha=a;fxCtx.shadowBlur=16;fxCtx.shadowColor='#ffb100';fxCtx.fillStyle='#ffe56b';fxCtx.beginPath();fxCtx.arc(p.x,p.y,p.s*a,0,Math.PI*2);fxCtx.fill();fxCtx.restore()}p.px=ox;p.py=oy;if(p.life<=0||p.y>innerHeight+90||p.x<-100||p.x>innerWidth+100)fxP.splice(i,1)}if(fxP.length)requestAnimationFrame(f);else{fxRun=false;fxCtx.clearRect(0,0,innerWidth,innerHeight)}}requestAnimationFrame(f)}
-function goldRain(n=100,dur=900){const factor=innerWidth<720?.62:1,m=Math.floor(n*factor),step=Math.max(4,dur/Math.max(1,m));for(let i=0;i<m;i++)setTimeout(()=>{makeCoin(Math.random()*innerWidth,-20-Math.random()*100,'rain');fxLoop()},i*step)}
-function goldFountain(n=90,x=innerWidth/2,y=innerHeight*.63){const factor=innerWidth<720?.64:1,m=Math.floor(n*factor);for(let i=0;i<m;i++)setTimeout(()=>{makeCoin(x+(Math.random()-.5)*80,y,'fountain');if(i%3===0)makeSpark(x,y,1.4);fxLoop()},i*9)}
-function sideCannons(n=80){const factor=innerWidth<720?.64:1,m=Math.floor(n*factor);for(let i=0;i<m;i++)setTimeout(()=>{const l=i%2===0;makeCoin(l?-15:innerWidth+15,innerHeight*.78+(Math.random()-.5)*120,l?'left':'right');fxLoop()},i*12)}
-function goldStorm(level='win'){if(level==='jackpot'){goldRain(520,3200);goldFountain(260);sideCannons(240);fireworkShow(14,4200);setTimeout(()=>goldRain(340,2100),1700);setTimeout(()=>goldFountain(220),3000)}else if(level==='mega'){goldRain(320,2200);goldFountain(190);sideCannons(145);fireworkShow(8,2500)}else if(level==='super'){goldRain(230,1750);goldFountain(145);sideCannons(92);fireworkShow(5,1800)}else if(level==='big'){goldRain(165,1350);goldFountain(105);fireworkShow(3,1200)}else{goldRain(95,950);goldFountain(55)}}
+function fxLoop(){if(fxRun)return;fxRun=true;let last=0;function f(ts){const minFrame=fxMobile()?22:15;if(last&&ts-last<minFrame){requestAnimationFrame(f);return}last=ts;fxCtx.clearRect(0,0,innerWidth,innerHeight);for(let i=fxP.length-1;i>=0;i--){const p=fxP[i];p.life--;const ox=p.x,oy=p.y;p.x+=p.vx;p.y+=p.vy;p.vy+=p.g||0;p.r=(p.r||0)+(p.vr||0);const a=Math.max(0,Math.min(1,p.life/p.max));if(p.type==='coin'){const flip=.30+.70*Math.abs(Math.cos(p.r));fxCtx.save();fxCtx.translate(p.x,p.y);fxCtx.rotate(p.r*.35);fxCtx.scale(flip,1);fxCtx.globalAlpha=Math.min(1,a*1.55);fxCtx.fillStyle='#f6b92f';fxCtx.strokeStyle='#fff0a0';fxCtx.lineWidth=1.2;fxCtx.beginPath();fxCtx.arc(0,0,p.s,0,Math.PI*2);fxCtx.fill();fxCtx.stroke();fxCtx.fillStyle='rgba(255,247,188,.78)';fxCtx.beginPath();fxCtx.arc(-p.s*.25,-p.s*.28,Math.max(1.4,p.s*.16),0,Math.PI*2);fxCtx.fill();fxCtx.restore()}else if(p.type==='firework'){fxCtx.save();fxCtx.globalAlpha=Math.min(1,a*1.3);fxCtx.strokeStyle=p.color;fxCtx.lineWidth=p.s;fxCtx.lineCap='round';fxCtx.beginPath();fxCtx.moveTo(ox,oy);fxCtx.lineTo(p.x,p.y);fxCtx.stroke();fxCtx.restore();p.vx*=.988;p.vy*=.988}else{fxCtx.globalAlpha=a;fxCtx.fillStyle='#ffe36c';fxCtx.beginPath();fxCtx.arc(p.x,p.y,p.s*a,0,Math.PI*2);fxCtx.fill()}if(p.life<=0||p.y>innerHeight+70||p.x<-80||p.x>innerWidth+80)fxP.splice(i,1)}fxCtx.globalAlpha=1;if(fxP.length)requestAnimationFrame(f);else{fxRun=false;fxCtx.clearRect(0,0,innerWidth,innerHeight)}}requestAnimationFrame(f)}
+function goldRain(n=60,dur=900){const factor=fxMobile()?.54:1,m=Math.min(Math.floor(n*factor),fxCap()),step=Math.max(8,dur/Math.max(1,m));for(let i=0;i<m;i++)setTimeout(()=>{makeCoin(Math.random()*innerWidth,-18-Math.random()*60,'rain');fxLoop()},i*step)}
+function goldFountain(n=55,x=innerWidth/2,y=innerHeight*.63){const factor=fxMobile()?.52:1,m=Math.min(Math.floor(n*factor),fxCap());for(let i=0;i<m;i++)setTimeout(()=>{makeCoin(x+(Math.random()-.5)*64,y,'fountain');if(i%6===0)makeSpark(x,y,1.2);fxLoop()},i*14)}
+function sideCannons(n=42){const factor=fxMobile()?.46:1,m=Math.min(Math.floor(n*factor),fxCap());for(let i=0;i<m;i++)setTimeout(()=>{const l=i%2===0;makeCoin(l?-12:innerWidth+12,innerHeight*.76+(Math.random()-.5)*80,l?'left':'right');fxLoop()},i*17)}
+function goldStorm(level='win'){if(level==='jackpot'){goldRain(180,2500);goldFountain(105);sideCannons(86);fireworkShow(7,3000);setTimeout(()=>goldRain(90,1200),1300)}else if(level==='mega'){goldRain(125,1800);goldFountain(75);sideCannons(54);fireworkShow(5,2100)}else if(level==='super'){goldRain(90,1400);goldFountain(52);sideCannons(32);fireworkShow(4,1500)}else if(level==='big'){goldRain(66,1050);goldFountain(36);fireworkShow(3,1100)}else{goldRain(38,760);goldFountain(20)}}
 function coinRain(n=42){goldRain(n,Math.max(500,n*9))}
 function flashScreen(){const f=document.createElement('div');f.className='screenFlash';document.body.appendChild(f);setTimeout(()=>f.remove(),850)}
 function sparksFromHits(hits,intensity=7){hits.forEach(key=>{const [c,r]=key.split('-'),el=document.querySelector(`.sym[data-c="${c}"][data-r="${r}"]`);if(!el)return;const b=el.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2;for(let i=0;i<intensity;i++)setTimeout(()=>{makeSpark(x+(Math.random()-.5)*b.width*.25,y+(Math.random()-.5)*b.height*.25,1.35);fxLoop()},i*14)})}
 function animateTextNumber(el,target,duration=1100,suffix=''){const start=performance.now();target=Math.max(0,Math.floor(target));function frame(now){const t=Math.min(1,(now-start)/duration),ease=1-Math.pow(1-t,4),v=Math.floor(target*ease);el.textContent=v.toLocaleString('vi-VN')+suffix;if(t<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)}
 function markWinningSymbols(hits){hits.forEach(key=>{const [c,r]=key.split('-'),el=document.querySelector(`.sym[data-c="${c}"][data-r="${r}"]`);if(el){el.classList.add('v12Hit');setTimeout(()=>el.classList.remove('v12Hit'),2300)}})}
 function miniWinBadge(win,ratio){const f=document.createElement('div');f.className='miniWinFx';f.innerHTML=`<span class="mwLabel">${ratio>=8?'GREAT WIN':ratio>=3?'NICE WIN':'WIN'}</span><span class="mwAmount">+${Math.floor(win).toLocaleString('vi-VN')}</span>`;document.body.appendChild(f);setTimeout(()=>f.remove(),1900)}
-function showWinFX(win,hits){if(!win)return;const ratio=win/betLevels[betIndex];markWinningSymbols(hits);sparksFromHits(hits,ratio>=8?24:ratio>=3?17:12);const cab=$('.reelCab');cab.classList.remove('winGlow');void cab.offsetWidth;cab.classList.add('winGlow');miniWinBadge(win,ratio);if(ratio<2){goldRain(55,650);goldFountain(28);fireworkBurst(innerWidth*.5,innerHeight*.31,'#ffd85e',26)}else if(ratio<5){goldRain(90,900);goldFountain(48);fireworkShow(2,650)}else if(ratio<8){goldRain(125,1050);goldFountain(70);sideCannons(34);fireworkShow(3,950);flashScreen()}else if(ratio<DEV.bigX){goldStorm('big');fireworkShow(4,1200);flashScreen();$('#machine').classList.add('fxShake');setTimeout(()=>$('#machine').classList.remove('fxShake'),1000)}animateTextNumber($('#win'),win,Math.min(2300,900+ratio*55))}
-function bonusBuffaloEchoes(){const points=[['-32vw','18vh','44vw','8vh','-18deg'],['116vw','22vh','-42vw','12vh','16deg'],['-28vw','70vh','40vw','-12vh','-10deg'],['120vw','72vh','-46vw','-14vh','18deg']];points.forEach((q,i)=>setTimeout(()=>{const im=new Image();im.src=ASSETS.BUFFALO;im.className='bonusBuffaloEcho';im.style.setProperty('--sx',q[0]);im.style.setProperty('--sy',q[1]);im.style.setProperty('--ex',q[2]);im.style.setProperty('--ey',q[3]);im.style.setProperty('--r',q[4]);im.style.left='50%';im.style.top='40%';document.body.appendChild(im);setTimeout(()=>im.remove(),2900)},i*180))}
-function showFeatureFX(title,sub='',opts={}){const f=$('#featureFX'),hero=$('#bonusBuffaloHero');$('#featureTitle').textContent=title;$('#featureSub').textContent=sub;$('#bonusKicker').textContent=opts.kicker||'BONUS UNLOCKED';$('#featureRibbon').textContent=opts.ribbon||'GOLD BUFFALO FEATURE';hero.src=ASSETS.BUFFALO;f.className=opts.kind||'';f.classList.remove('on');void f.offsetWidth;f.classList.add('on');cinematicLock=true;flashScreen();goldStorm(opts.storm||'mega');fireworkShow(opts.fireworks||10,opts.duration||3600);bonusBuffaloEchoes();setTimeout(()=>fireworkBurst(innerWidth*.5,innerHeight*.22,'#fff1a4',72),520);setTimeout(()=>{flashScreen();goldFountain(130,innerWidth*.5,innerHeight*.66)},980);setTimeout(()=>fireworkShow(6,1500),1700);const dur=opts.hold||5600;setTimeout(()=>{f.classList.remove('on');f.className='';cinematicLock=false},dur);return dur}
-function handleMilestones(oldV,newV){for(const lv of [4,7,13,15])if(oldV<lv&&newV>=lv){setTimeout(()=>{const row=document.querySelector(`.collectRow[data-level="${lv}"]`);row?.classList.add('upgradeHit');setTimeout(()=>row?.classList.remove('upgradeHit'),3000);showFeatureFX('BUFFALO UPGRADE!',lv===4?'EAGLES → BUFFALO':lv===7?'COUGARS → BUFFALO':lv===13?'WOLVES → BUFFALO':'ELK → BUFFALO',{kicker:`COLLECT ${lv} UNLOCKED`,ribbon:'MORE BUFFALO · MORE WAYS',storm:'super',fireworks:7,hold:4600});playSfx('bonus',1);setTimeout(()=>spawnStampede(1),700)},300)}}
-function spawnStampede(waves=1){for(let w=0;w<waves;w++)setTimeout(()=>{for(let i=0;i<6;i++){const im=new Image();im.src=ASSETS.BUFFALO;im.className='stampede';im.style.setProperty('--delay',(i*.12)+'s');im.style.bottom=(-4+(i%3)*3)+'vh';im.style.width=(19+Math.random()*10)+'vw';document.body.appendChild(im);setTimeout(()=>im.remove(),3900)}},w*950)}
-function showBig(win,label=null){const ratio=win/betLevels[betIndex];if(!label&&ratio<DEV.bigX)return 0;const title=label||(ratio>=DEV.megaX?'MEGA WIN':ratio>=DEV.superX?'SUPER WIN':'BIG WIN'),box=$('#bigWin'),jack=title==='JACKPOT';box.className='';if(jack)box.classList.add('jackpot');else if(title==='MEGA WIN')box.classList.add('mega');$('#bigTitle').textContent=jack?'GRAND JACKPOT':title;$('#bigTier').textContent=jack?'ULTIMATE BUFFALO PAYDAY':title==='MEGA WIN'?'MAXIMUM CELEBRATION':title==='SUPER WIN'?'GOLD STAMPEDE':'WIN CELEBRATION';$('#bigHint').textContent=jack?'THE HERD HAS ARRIVED!':title==='MEGA WIN'?'BUFFALO GOLD EXPLODES!':'KEEP THE GOLD COMING!';box.style.display='grid';const level=jack?'jackpot':title==='MEGA WIN'?'mega':title==='SUPER WIN'?'super':'big';goldStorm(level);flashScreen();animateTextNumber($('#bigAmount'),win,jack?5200:title==='MEGA WIN'?3400:2600,' xu');$('#machine').classList.add('fxShake');setTimeout(()=>$('#machine').classList.remove('fxShake'),jack?2200:1100);if(jack){document.querySelectorAll('.jp').forEach((x,i)=>setTimeout(()=>x.classList.add('hitJackpot'),i*120));spawnStampede(3);setTimeout(()=>sideCannons(160),900)}playSfx(jack?'jackpot':'big',1);const dur=jack?8800:title==='MEGA WIN'?6100:title==='SUPER WIN'?5400:5000;setTimeout(()=>{box.style.display='none';box.className='';document.querySelectorAll('.jp').forEach(x=>x.classList.remove('hitJackpot'))},dur);return dur}
-function enterBonus(award,retrigger=false){award=Math.max(0,Math.floor(award));if(!retrigger){freeTotal=award;freeSpins=award;freePlayed=0;bonusWinTotal=0;collect=0}else{freeTotal+=award;freeSpins+=award}updateHUD();const d=showFeatureFX(retrigger?'FREE GAMES RETRIGGER!':'FREE GAMES!',retrigger?`+${award} EXTRA FREE SPINS`:`${award} FREE SPINS`,{kind:retrigger?'retrigger':'bonusLaunch',kicker:retrigger?'BONUS EXTENDED':'3+ SCATTERS TRIGGERED',ribbon:retrigger?'THE HERD KEEPS RUNNING':'GOLD BUFFALO COLLECTION BEGINS',storm:'mega',fireworks:retrigger?12:15,hold:6200});playSfx(resSafeSoundName(),1);setTimeout(()=>playSfx('bonus',1),480);setTimeout(()=>spawnStampede(2),900);return d}
+function showWinFX(win,hits){if(!win)return;const ratio=win/betLevels[betIndex];markWinningSymbols(hits);sparksFromHits(hits,ratio>=8?10:ratio>=3?7:5);const cab=$('.reelCab');cab.classList.remove('winGlow');void cab.offsetWidth;cab.classList.add('winGlow');miniWinBadge(win,ratio);if(ratio<2){goldRain(20,520);goldFountain(10);fireworkBurst(innerWidth*.5,innerHeight*.29,'#ffd85e',16)}else if(ratio<5){goldRain(34,700);goldFountain(18);fireworkShow(2,650)}else if(ratio<8){goldRain(48,820);goldFountain(25);sideCannons(14);fireworkShow(2,760);flashScreen()}else if(ratio<DEV.bigX){goldStorm('big');flashScreen();$('#machine').classList.add('fxShake');setTimeout(()=>$('#machine').classList.remove('fxShake'),720)}animateTextNumber($('#win'),win,Math.min(1900,760+ratio*42))}
+function bonusBuffaloEchoes(){const points=fxMobile()?[['-28vw','26vh','40vw','2vh','-12deg'],['116vw','58vh','-44vw','-8vh','14deg']]:[['-30vw','20vh','42vw','6vh','-14deg'],['116vw','24vh','-42vw','10vh','14deg'],['-24vw','70vh','35vw','-10vh','-8deg']];points.forEach((q,i)=>setTimeout(()=>{const im=new Image();im.src=ASSETS.BUFFALO;im.className='bonusBuffaloEcho';im.style.setProperty('--sx',q[0]);im.style.setProperty('--sy',q[1]);im.style.setProperty('--ex',q[2]);im.style.setProperty('--ey',q[3]);im.style.setProperty('--r',q[4]);im.style.left='50%';im.style.top='40%';document.body.appendChild(im);setTimeout(()=>im.remove(),2500)},i*230))}
+function showFeatureFX(title,sub='',opts={}){const f=$('#featureFX'),hero=$('#bonusBuffaloHero');$('#featureTitle').textContent=title;$('#featureSub').textContent=sub;$('#bonusKicker').textContent=opts.kicker||'BONUS UNLOCKED';$('#featureRibbon').textContent=opts.ribbon||'GOLD BUFFALO FEATURE';hero.src=ASSETS.BUFFALO;f.className=opts.kind||'';f.classList.remove('on');void f.offsetWidth;f.classList.add('on');document.body.classList.add('fxBusy');cinematicLock=true;flashScreen();goldStorm(opts.storm==='mega'?'super':opts.storm||'super');fireworkShow(Math.min(opts.fireworks||6,7),2200);bonusBuffaloEchoes();setTimeout(()=>fireworkBurst(innerWidth*.5,innerHeight*.20,'#fff1a4',fxMobile()?22:34),420);setTimeout(()=>{flashScreen();goldFountain(fxMobile()?32:52,innerWidth*.5,innerHeight*.65)},880);const dur=Math.min(opts.hold||5000,5400);setTimeout(()=>{f.classList.remove('on');f.className='';document.body.classList.remove('fxBusy');cinematicLock=false},dur);return dur}
+function handleMilestones(oldV,newV){for(const lv of [4,7,13,15])if(oldV<lv&&newV>=lv){setTimeout(()=>{const row=document.querySelector(`.collectRow[data-level="${lv}"]`);row?.classList.add('upgradeHit');setTimeout(()=>row?.classList.remove('upgradeHit'),3000);showFeatureFX('BUFFALO UPGRADE!',lv===4?'EAGLES → BUFFALO':lv===7?'COUGARS → BUFFALO':lv===13?'WOLVES → BUFFALO':'ELK → BUFFALO',{kicker:`COLLECT ${lv} UNLOCKED`,ribbon:'MORE BUFFALO · MORE WAYS',storm:'super',fireworks:5,hold:4000});playSfx('bonus',1);setTimeout(()=>spawnStampede(1),700)},300)}}
+function spawnStampede(waves=1){const ww=Math.min(waves,fxMobile()?1:2),count=fxMobile()?2:3;for(let w=0;w<ww;w++)setTimeout(()=>{for(let i=0;i<count;i++){const im=new Image();im.src=ASSETS.BUFFALO;im.className='stampede';im.style.setProperty('--delay',(i*.16)+'s');im.style.bottom=(-3+(i%2)*4)+'vh';im.style.width=(fxMobile()?30:25)+'vw';document.body.appendChild(im);setTimeout(()=>im.remove(),3300)}},w*1050)}
+function showBig(win,label=null){const ratio=win/betLevels[betIndex];if(!label&&ratio<DEV.bigX)return 0;const title=label||(ratio>=DEV.megaX?'MEGA WIN':ratio>=DEV.superX?'SUPER WIN':'BIG WIN'),box=$('#bigWin'),jack=title==='JACKPOT';box.className='';if(jack)box.classList.add('jackpot');else if(title==='MEGA WIN')box.classList.add('mega');$('#bigTitle').textContent=jack?'GRAND JACKPOT':title;$('#bigTier').textContent=jack?'ULTIMATE BUFFALO PAYDAY':title==='MEGA WIN'?'MAXIMUM CELEBRATION':title==='SUPER WIN'?'GOLD STAMPEDE':'WIN CELEBRATION';$('#bigHint').textContent=jack?'THE HERD HAS ARRIVED!':title==='MEGA WIN'?'BUFFALO GOLD EXPLODES!':'KEEP THE GOLD COMING!';box.style.display='grid';const level=jack?'jackpot':title==='MEGA WIN'?'mega':title==='SUPER WIN'?'super':'big';goldStorm(level);flashScreen();animateTextNumber($('#bigAmount'),win,jack?5200:title==='MEGA WIN'?3400:2600,' xu');$('#machine').classList.add('fxShake');setTimeout(()=>$('#machine').classList.remove('fxShake'),jack?2200:1100);if(jack){document.querySelectorAll('.jp').forEach((x,i)=>setTimeout(()=>x.classList.add('hitJackpot'),i*120));spawnStampede(2);setTimeout(()=>sideCannons(54),900)}playSfx(jack?'jackpot':'big',1);const dur=jack?8800:title==='MEGA WIN'?6100:title==='SUPER WIN'?5400:5000;setTimeout(()=>{box.style.display='none';box.className='';document.querySelectorAll('.jp').forEach(x=>x.classList.remove('hitJackpot'))},dur);return dur}
+function enterBonus(award,retrigger=false){award=Math.max(0,Math.floor(award));if(!retrigger){freeTotal=award;freeSpins=award;freePlayed=0;bonusWinTotal=0;collect=0}else{freeTotal+=award;freeSpins+=award}updateHUD();const d=showFeatureFX(retrigger?'FREE GAMES RETRIGGER!':'FREE GAMES!',retrigger?`+${award} EXTRA FREE SPINS`:`${award} FREE SPINS`,{kind:retrigger?'retrigger':'bonusLaunch',kicker:retrigger?'BONUS EXTENDED':'3+ SCATTERS TRIGGERED',ribbon:retrigger?'THE HERD KEEPS RUNNING':'GOLD BUFFALO COLLECTION BEGINS',storm:'mega',fireworks:retrigger?7:7,hold:5200});playSfx(resSafeSoundName(),1);setTimeout(()=>playSfx('bonus',1),480);setTimeout(()=>spawnStampede(1),900);return d}
 function resSafeSoundName(){return 'scatter3'}
-function endBonus(){if(!freeTotal)return;const total=bonusWinTotal,cc=collect;const d=showFeatureFX('BONUS COMPLETE',`${Math.floor(total).toLocaleString('vi-VN')} XU WON`,{kind:'complete',kicker:`${cc} GOLD BUFFALO COLLECTED`,ribbon:'FREE GAMES PAYOUT COMPLETE',storm:total>betLevels[betIndex]*DEV.bigX?'mega':'super',fireworks:10,hold:5400});playSfx('big',.96);freeSpins=0;freeTotal=0;freePlayed=0;bonusWinTotal=0;collect=0;setTimeout(()=>{document.body.classList.remove('bonusMode');updateHUD()},d)}
+function endBonus(){if(!freeTotal)return;const total=bonusWinTotal,cc=collect;const d=showFeatureFX('BONUS COMPLETE',`${Math.floor(total).toLocaleString('vi-VN')} XU WON`,{kind:'complete',kicker:`${cc} GOLD BUFFALO COLLECTED`,ribbon:'FREE GAMES PAYOUT COMPLETE',storm:total>betLevels[betIndex]*DEV.bigX?'mega':'super',fireworks:6,hold:4800});playSfx('big',.96);freeSpins=0;freeTotal=0;freePlayed=0;bonusWinTotal=0;collect=0;setTimeout(()=>{document.body.classList.remove('bonusMode');updateHUD()},d)}
 async function spin(){if(spinning||playerPaused||cinematicLock)return;if(!audioReady){$('#audioGate').style.display='grid';return}const b=betLevels[betIndex],isFree=freeSpins>0;window.BuffaloTelemetry?.spinStart?.({bet:b,balance,isFree});if(!isFree&&balance<b){msg.textContent='KHÔNG ĐỦ XU — DEV/RESET ĐỂ THÊM';return}spinning=true;$('#spin').disabled=true;$('#win').textContent='0';if(isFree){freeSpins--;freePlayed++}else balance-=b;updateHUD(0);msg.textContent=isFree?'FREE GAME — GOLD BUFFALO COLLECTION':'GOOD LUCK!';playSfx('spin',.80);grid=makeGrid();render();reelStart();let tick=setInterval(()=>{for(let c=0;c<5;c++)fakeRoll(c)},86);await new Promise(r=>setTimeout(r,760));clearInterval(tick);render();reelStart();for(let c=0;c<5;c++){await new Promise(r=>setTimeout(r,190+c*32));reelStop(c)}if(isFree){let gained=0;for(let c=0;c<5;c++)for(let r=0;r<4;r++)if(grid[c][r]==='BUFFALO')gained++;if(gained){const old=collect;collect=Math.min(15,collect+Math.min(3,gained));if(collect>old){playSfx('collect',.93);handleMilestones(old,collect);goldFountain(55,innerWidth*.82,innerHeight*.42)}}}
  const res=evalWins(),jackpotHit=!!(QA_OVERRIDE&&QA_OVERRIDE.enabled&&QA_OVERRIDE.forceJackpotNext)||rng()<Math.max(0,Math.min(100,effectiveJackpotChance()))/100;if(jackpotHit){const jp=Math.max(0,Math.floor(Number(DEV.jackpotAmount)||0));balance+=jp;if(isFree)bonusWinTotal+=jp;render(res.hits,false);updateHUD(0);msg.textContent='JACKPOT!';const d=showBig(jp,'JACKPOT');window.BuffaloTelemetry?.spinEnd?.({bet:b,win:jp,jackpot:true,balance,isFree});window.BuffaloTelemetry?.consumeForceJackpot?.();spinning=false;$('#spin').disabled=false;if(isFree&&freeSpins===0)setTimeout(endBonus,d+200);if(autoLeft>0){autoLeft--;if(autoLeft)setTimeout(spin,d+300)}return}
  let bonusTriggered=false,bonusDelay=0;if(res.scatters>=3){const award=res.scatters===3?DEV.fs3:res.scatters===4?DEV.fs4:DEV.fs5;bonusTriggered=true;msg.textContent=`${award} FREE GAMES WON!`;playSfx(res.scatters>=5?'scatter3':res.scatters===4?'scatter2':'scatter1',1);bonusDelay=enterBonus(award,isFree||freeTotal>0)}if(res.total>0){balance+=res.total;if(isFree)bonusWinTotal+=res.total;if(res.scatters<3)msg.textContent=`WIN ${res.total.toLocaleString('vi-VN')}`;if(res.total/b<DEV.bigX)playSfx('win',.9)}render(res.hits,res.scatters>=3);updateHUD(0);if(res.total>0)showWinFX(res.total,res.hits);const d=showBig(res.total);window.BuffaloTelemetry?.spinEnd?.({bet:b,win:res.total,jackpot:false,balance,isFree,scatters:res.scatters});spinning=false;$('#spin').disabled=false;if(isFree&&freeSpins===0&&!bonusTriggered)setTimeout(endBonus,Math.max(1200,d+250));if(autoLeft>0){autoLeft--;$('#auto').textContent=autoLeft?'AUTO '+autoLeft:'AUTO';if(autoLeft)setTimeout(spin,Math.max(760,d+180,bonusDelay+260))}else $('#auto').textContent='AUTO'}
 $('#enableAudio').onclick=unlockAudio;$('#spin').onclick=spin;$('#soundBtn').onclick=()=>{soundOn=!soundOn;$('#soundBtn').textContent=soundOn?'🔊':'🔇';if(soundOn)playSfx('ui',.8)};$('#betDown').onclick=()=>{if(spinning)return;betIndex=Math.max(0,betIndex-1);updateHUD()};$('#betUp').onclick=()=>{if(spinning)return;betIndex=Math.min(betLevels.length-1,betIndex+1);updateHUD()};$('#maxBet').onclick=()=>{if(spinning)return;betIndex=betLevels.length-1;updateHUD();playSfx('ui',.65)};$('#auto').onclick=()=>{if(spinning||autoLeft)return;autoLeft=10;$('#auto').textContent='AUTO 10';spin()};
 function fillDev(){$('#devJackChance').value=DEV.jackpotChance;$('#devJackAmount').value=DEV.jackpotAmount;$('#devPayoutMult').value=DEV.payoutMult;$('#devBigX').value=DEV.bigX;$('#devSuperX').value=DEV.superX;$('#devMegaX').value=DEV.megaX;$('#devFS3').value=DEV.fs3;$('#devFS4').value=DEV.fs4;$('#devFS5').value=DEV.fs5}function saveDev(){DEV={jackpotChance:Math.max(0,Math.min(100,Number($('#devJackChance').value)||0)),jackpotAmount:Math.max(0,Number($('#devJackAmount').value)||0),payoutMult:Math.max(0,Number($('#devPayoutMult').value)||0),bigX:Math.max(1,Number($('#devBigX').value)||1),superX:Math.max(1,Number($('#devSuperX').value)||1),megaX:Math.max(1,Number($('#devMegaX').value)||1),fs3:Math.max(0,Number($('#devFS3').value)||0),fs4:Math.max(0,Number($('#devFS4').value)||0),fs5:Math.max(0,Number($('#devFS5').value)||0)};msg.textContent='DEV SETTINGS DISABLED IN PUBLIC BUILD'}
-$('#devToggle').onclick=()=>{$('#devPanel').classList.toggle('open');fillDev()};$('#devClose').onclick=()=>$('#devPanel').classList.remove('open');$('#devApply').onclick=saveDev;$('#devDefaults').onclick=()=>{DEV={...DEV_DEFAULTS};localStorage.setItem('buffaloV5Dev',JSON.stringify(DEV));fillDev()};$('#devTestAudio').onclick=()=>playSfx('bonus',.95);$('#devTestBig').onclick=()=>showBig(betLevels[betIndex]*Math.max(20,DEV.bigX),'BIG WIN');$('#devTestJack').onclick=()=>showBig(DEV.jackpotAmount,'JACKPOT');$('#devTestScatter').onclick=()=>{playSfx('scatter3',.96);setTimeout(()=>playSfx('bonus',.96),650);showFeatureFX('FREE GAMES!','20 FREE SPINS',{kind:'bonusLaunch',kicker:'3+ SCATTERS TRIGGERED',ribbon:'GOLD BUFFALO COLLECTION BEGINS',storm:'mega',fireworks:15,hold:6200})};document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.code==='KeyD'){$('#devPanel').classList.toggle('open');fillDev()}});grid=makeGrid();render();updateHUD();fillDev();if(new URLSearchParams(location.search).has('preview')){audioReady=true;$('#audioGate').style.display='none'}
+$('#devToggle').onclick=()=>{$('#devPanel').classList.toggle('open');fillDev()};$('#devClose').onclick=()=>$('#devPanel').classList.remove('open');$('#devApply').onclick=saveDev;$('#devDefaults').onclick=()=>{DEV={...DEV_DEFAULTS};localStorage.setItem('buffaloV5Dev',JSON.stringify(DEV));fillDev()};$('#devTestAudio').onclick=()=>playSfx('bonus',.95);$('#devTestBig').onclick=()=>showBig(betLevels[betIndex]*Math.max(20,DEV.bigX),'BIG WIN');$('#devTestJack').onclick=()=>showBig(DEV.jackpotAmount,'JACKPOT');$('#devTestScatter').onclick=()=>{playSfx('scatter3',.96);setTimeout(()=>playSfx('bonus',.96),650);showFeatureFX('FREE GAMES!','20 FREE SPINS',{kind:'bonusLaunch',kicker:'3+ SCATTERS TRIGGERED',ribbon:'GOLD BUFFALO COLLECTION BEGINS',storm:'mega',fireworks:7,hold:5200})};document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.code==='KeyD'){$('#devPanel').classList.toggle('open');fillDev()}});grid=makeGrid();render();updateHUD();fillDev();if(new URLSearchParams(location.search).has('preview')){audioReady=true;$('#audioGate').style.display='none'}
 </script>
 <script>
 (function(){
