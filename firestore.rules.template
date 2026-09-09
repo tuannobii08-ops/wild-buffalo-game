@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    // Replace this placeholder in Firebase Console with the one DEV Gmail.
+    function isDev() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == "tuan1999asd@gmail.com";
+    }
+
+    match /settings/{docId} {
+      allow read: if signedIn();
+      allow write: if isDev();
+    }
+
+    match /players/{uid} {
+      allow create, update: if signedIn() && request.auth.uid == uid;
+      allow read: if (signedIn() && request.auth.uid == uid) || isDev();
+      allow delete: if isDev();
+    }
+
+    match /events/{eventId} {
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid;
+      allow read, delete: if isDev();
+      allow update: if false;
+    }
+
+    match /qaOverrides/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isDev());
+      allow write: if isDev();
+    }
+  }
+}

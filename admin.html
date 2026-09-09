@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buffalo V8 · DEV Dashboard</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#0d0907;color:#f8e7c6;font-family:Inter,system-ui,Arial,sans-serif}
+body{min-height:100vh;background:radial-gradient(circle at 50% 0,#4a1d0c 0,#160a06 38%,#090605 78%)}
+.wrap{width:min(1280px,96vw);margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{margin:0;color:#ffd86d;text-shadow:0 2px 0 #7b2608}.muted{color:#a99172;font-size:12px}
+button,input{font:inherit}.btn{border:1px solid #b5722a;background:linear-gradient(#6f2b0c,#351005);color:#ffe7aa;padding:9px 12px;border-radius:10px;font-weight:900;cursor:pointer}.btn.primary{background:linear-gradient(#d87c14,#8d3207)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.card{background:#180b07;border:1px solid #543019;border-radius:14px;padding:14px}.card b{display:block;color:#cda96c;font-size:10px;letter-spacing:.12em}.card strong{display:block;font-size:26px;color:#fff2bb;margin-top:4px}
+.panel{background:rgba(20,10,7,.95);border:1px solid #5b351c;border-radius:15px;padding:14px;margin:12px 0;box-shadow:0 14px 40px #0008}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form{display:grid;grid-template-columns:1fr 130px;gap:8px;align-items:center}.form input{width:100%;background:#100805;color:#fff;border:1px solid #66401f;border-radius:8px;padding:8px}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px;border-bottom:1px solid #342015;text-align:right}th:first-child,td:first-child{text-align:left}tr.active{background:#3c1a0a}tr:hover{background:#2b1309;cursor:pointer}
+#authGate{position:fixed;inset:0;display:grid;place-items:center;background:#090605;z-index:20}.gate{width:min(520px,92vw);text-align:center;background:#1d0c07;border:1px solid #b36f23;border-radius:20px;padding:28px}
+.badge{display:inline-block;padding:5px 8px;border-radius:999px;background:#9d180f;color:#fff;font-weight:900;font-size:10px}
+.good{color:#65e391}.bad{color:#ff6d61}.rowBtns{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+@media(max-width:800px){.cards{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.wrap{width:100%;padding:10px}table{font-size:10px}th,td{padding:6px}.form{grid-template-columns:1fr 105px}}
+</style>
+</head>
+<body>
+<div id="authGate"><div class="gate"><h1>BUFFALO V8 DEV</h1><p>Đăng nhập Google. Firestore Rules quyết định tài khoản nào có quyền DEV.</p><button id="login" class="btn primary">ĐĂNG NHẬP GOOGLE</button><p id="authMsg" class="muted">Chưa đăng nhập.</p></div></div>
+
+<div class="wrap">
+  <div class="top"><div><h1>Realtime DEV Dashboard</h1><div id="who" class="muted"></div></div><div><span class="badge">ADMIN ONLY</span> <button id="logout" class="btn">LOG OUT</button></div></div>
+
+  <div class="cards">
+    <div class="card"><b>ONLINE NOW</b><strong id="online">0</strong></div>
+    <div class="card"><b>ACTIVE SESSION WIN</b><strong id="sessionWin">0</strong></div>
+    <div class="card"><b>ACTIVE SPINS</b><strong id="spins">0</strong></div>
+    <div class="card"><b>JACKPOTS (RECENT)</b><strong id="jackpots">0</strong></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>Global game settings</h3>
+      <div class="form">
+        <label>Jackpot chance / spin (%)</label><input id="gJack" type="number" step=".01" min="0" max="100">
+        <label>Jackpot payout</label><input id="gJackAmt" type="number" step="100">
+        <label>Payout multiplier</label><input id="gPay" type="number" step=".1" min="0">
+        <label>BIG WIN × bet</label><input id="gBig" type="number" min="1">
+        <label>SUPER WIN × bet</label><input id="gSuper" type="number" min="1">
+        <label>MEGA WIN × bet</label><input id="gMega" type="number" min="1">
+        <label>3 Scatter → Free Spins</label><input id="gFs3" type="number" min="0">
+        <label>4 Scatter → Free Spins</label><input id="gFs4" type="number" min="0">
+        <label>5+ Scatter → Free Spins</label><input id="gFs5" type="number" min="0">
+      </div>
+      <div class="rowBtns"><button id="saveGlobal" class="btn primary">SAVE GLOBAL</button></div>
+      <p class="muted">Global settings áp dụng cho toàn bộ người chơi demo.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Selected player · QA TEST override</h3>
+      <div id="selected" class="muted">Chọn một người chơi ở bảng bên dưới.</div>
+      <div class="form" style="margin-top:10px">
+        <label>Cấp thêm xu ảo</label><input id="creditAmount" type="number" step="1000" min="1" value="10000">
+        <label>Enable TEST MODE</label><input id="qEnabled" type="checkbox">
+        <label>Win chance TEST (%)</label><input id="qWin" type="number" step="1" min="0" max="100">
+        <label>Jackpot chance (%)</label><input id="qJack" type="number" step=".01" min="0" max="100">
+        <label>Payout multiplier</label><input id="qPay" type="number" step=".1" min="0">
+      </div>
+      <div class="rowBtns">
+        <button id="grantCredits" class="btn primary">CẤP XU CHO PLAYER</button>
+        <button id="saveQa" class="btn primary">SAVE TEST ODDS</button>
+        <button id="forceJack" class="btn">FORCE NEXT JACKPOT</button>
+        <button id="clearQa" class="btn">CLEAR TEST MODE</button>
+      </div>
+      <p class="muted">Cấp xu là tiền ảo dùng trong demo. Per-player odds chỉ chạy trong <b>QA TEST MODE</b>; khi bật, người chơi nhìn thấy banner DEV TEST MODE.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Players</h3>
+    <div style="overflow:auto"><table><thead><tr><th>Tên người chơi</th><th>Status</th><th>Balance</th><th>Last Win</th><th>Session Win</th><th>Total Won</th><th>Spins</th><th>Last seen</th></tr></thead><tbody id="players"></tbody></table></div>
+  </div>
+
+  <div class="panel">
+    <h3>Recent spin events</h3>
+    <div style="overflow:auto"><table><thead><tr><th>Tên người chơi</th><th>Bet</th><th>Win</th><th>Jackpot</th><th>Balance</th><th>Time</th></tr></thead><tbody id="events"></tbody></table></div>
+  </div>
+</div>
+
+<script type="module">
+import { firebaseConfig, firebaseConfigured } from "./firebase-config.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore, collection, doc, onSnapshot, query, orderBy, limit, setDoc, deleteDoc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const $=s=>document.querySelector(s), fmt=n=>Math.floor(Number(n)||0).toLocaleString("vi-VN");
+if(!firebaseConfigured){
+  $("#authMsg").innerHTML='<span class="bad">firebase-config.js chưa được điền.</span>';
+  $("#login").disabled=true;
+}else{
+  const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),provider=new GoogleAuthProvider();
+  let selectedUid=null, playersMap=new Map();
+
+  $("#login").onclick=()=>signInWithPopup(auth,provider).catch(e=>$("#authMsg").textContent=e.message);
+  $("#logout").onclick=()=>signOut(auth);
+
+  onAuthStateChanged(auth,async user=>{
+    if(!user){$("#authGate").style.display="grid";return}
+    $("#who").textContent=user.email||user.uid;
+    try{
+      // This read is intentionally used as an authorization probe. Firestore Rules must allow only DEV.
+      await getDoc(doc(db,"settings","global"));
+      $("#authGate").style.display="none";
+      startDashboard();
+    }catch(e){
+      $("#authMsg").innerHTML='<span class="bad">Tài khoản này không có quyền DEV.</span>';
+      await signOut(auth);
+    }
+  });
+
+  function startDashboard(){
+    onSnapshot(collection(db,"players"),snap=>{
+      playersMap=new Map();
+      const now=Date.now(); let online=0,sessionWin=0,spins=0;
+      const rows=[];
+      snap.forEach(d=>{
+        const x=d.data(),ts=x.lastSeen?.toMillis?.()||0,isOnline=!!x.online&&(now-ts)<90000;
+        playersMap.set(d.id,{...x,uid:d.id,isOnline});
+        if(isOnline){online++;sessionWin+=Number(x.sessionWon)||0;spins+=Number(x.spins)||0}
+        rows.push({...x,uid:d.id,isOnline,ts});
+      });
+      rows.sort((a,b)=>b.ts-a.ts);
+      $("#online").textContent=online;$("#sessionWin").textContent=fmt(sessionWin);$("#spins").textContent=fmt(spins);
+      $("#players").innerHTML=rows.map(x=>`<tr data-uid="${x.uid}" class="${x.uid===selectedUid?'active':''}">
+        <td><b>${x.playerName||"Chưa đặt tên"}</b></td><td class="${x.isOnline?'good':'muted'}">${x.isOnline?'ONLINE':'offline'}</td>
+        <td>${fmt(x.balance)}</td><td>${fmt(x.lastWin)}</td><td>${fmt(x.sessionWon)}</td><td>${fmt(x.totalWon)}</td><td>${fmt(x.spins)}</td>
+        <td>${x.ts?new Date(x.ts).toLocaleTimeString("vi-VN"):"-"}</td></tr>`).join("");
+      document.querySelectorAll("#players tr").forEach(tr=>tr.onclick=()=>selectPlayer(tr.dataset.uid));
+    });
+
+    onSnapshot(query(collection(db,"events"),orderBy("ts","desc"),limit(60)),snap=>{
+      let jackpots=0;const rows=[];
+      snap.forEach(d=>{const x=d.data();if(x.jackpot)jackpots++;rows.push(x)});
+      $("#jackpots").textContent=jackpots;
+      $("#events").innerHTML=rows.map(x=>`<tr><td><b>${x.playerName||x.displayId||"-"}</b></td><td>${fmt(x.bet)}</td><td>${fmt(x.win)}</td><td>${x.jackpot?"🏆":"-"}</td><td>${fmt(x.balance)}</td><td>${x.ts?.toDate?.().toLocaleTimeString("vi-VN")||"-"}</td></tr>`).join("");
+    });
+
+    onSnapshot(doc(db,"settings","global"),snap=>{
+      const x=snap.exists()?snap.data():{jackpotChance:.35,jackpotAmount:50000,payoutMult:1,bigX:15,superX:30,megaX:60,fs3:8,fs4:15,fs5:20};
+      $("#gJack").value=x.jackpotChance??.35;$("#gJackAmt").value=x.jackpotAmount??50000;$("#gPay").value=x.payoutMult??1;
+      $("#gBig").value=x.bigX??15;$("#gSuper").value=x.superX??30;$("#gMega").value=x.megaX??60;
+      $("#gFs3").value=x.fs3??8;$("#gFs4").value=x.fs4??15;$("#gFs5").value=x.fs5??20;
+    });
+  }
+
+  $("#saveGlobal").onclick=async()=>{
+    await setDoc(doc(db,"settings","global"),{
+      jackpotChance:Number($("#gJack").value)||0,jackpotAmount:Number($("#gJackAmt").value)||0,payoutMult:Number($("#gPay").value)||0,
+      bigX:Number($("#gBig").value)||15,superX:Number($("#gSuper").value)||30,megaX:Number($("#gMega").value)||60,
+      fs3:Number($("#gFs3").value)||0,fs4:Number($("#gFs4").value)||0,fs5:Number($("#gFs5").value)||0,updatedAt:serverTimestamp()
+    },{merge:true});
+  };
+
+  async function selectPlayer(uid){
+    selectedUid=uid;const p=playersMap.get(uid);$("#selected").textContent=`${p?.playerName||p?.displayId||uid} · ${p?.isOnline?"ONLINE":"offline"} · session win ${fmt(p?.sessionWon)}`;
+    document.querySelectorAll("#players tr").forEach(x=>x.classList.toggle("active",x.dataset.uid===uid));
+    const snap=await getDoc(doc(db,"qaOverrides",uid));
+    const q=snap.exists()?snap.data():{};
+    $("#qEnabled").checked=!!q.enabled;$("#qWin").value=q.winChance??"";$("#qJack").value=q.jackpotChance??"";$("#qPay").value=q.payoutMult??"";
+  }
+
+  $("#grantCredits").onclick=async()=>{
+    if(!selectedUid)return alert("Chọn người chơi trước.");
+    const amount=Math.max(1,Math.floor(Number($("#creditAmount").value)||0));
+    if(!amount)return alert("Nhập số xu cần cấp.");
+    const p=playersMap.get(selectedUid);
+    if(!confirm(`Cấp +${amount.toLocaleString("vi-VN")} xu ảo cho ${p?.playerName||"người chơi này"}?`))return;
+    await setDoc(doc(db,"qaOverrides",selectedUid),{
+      creditAmount:amount,
+      creditGrantNonce:crypto.randomUUID(),
+      creditGrantedAt:serverTimestamp()
+    },{merge:true});
+  };
+
+  $("#saveQa").onclick=async()=>{
+    if(!selectedUid)return alert("Chọn player trước.");
+    await setDoc(doc(db,"qaOverrides",selectedUid),{
+      enabled:$("#qEnabled").checked,winChance:Number($("#qWin").value),jackpotChance:Number($("#qJack").value),payoutMult:Number($("#qPay").value),visible:true,updatedAt:serverTimestamp()
+    },{merge:true});
+  };
+  $("#forceJack").onclick=async()=>{
+    if(!selectedUid)return alert("Chọn player trước.");
+    await setDoc(doc(db,"qaOverrides",selectedUid),{
+      enabled:true,visible:true,forceJackpotNonce:crypto.randomUUID(),updatedAt:serverTimestamp()
+    },{merge:true});
+  };
+  $("#clearQa").onclick=async()=>{
+    if(!selectedUid)return;
+    await deleteDoc(doc(db,"qaOverrides",selectedUid));
+    $("#qEnabled").checked=false;$("#qWin").value="";$("#qJack").value="";$("#qPay").value="";
+  };
+}
+</script>
+</body>
+</html>
