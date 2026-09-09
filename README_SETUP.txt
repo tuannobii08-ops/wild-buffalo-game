@@ -101,3 +101,34 @@ V14 PREMIUM SMOOTH
 - Stampede giảm số DOM image cùng lúc.
 - Mobile được tối ưu mạnh để tránh tụt FPS.
 - Firebase/Admin/Realtime giữ nguyên.
+
+V15 ULTIMATE — PREMIUM + PERFORMANCE PASS
+-----------------------------------------
+Mục tiêu: làm lại khu vực ngoài reel theo hướng cao cấp, rõ hierarchy và giảm lag mạnh.
+
+UI:
+- Header mới hoàn toàn: Buffalo hero, sunset identity, Gold Collection branding.
+- Jackpot area 2x2 gọn, rõ GRAND / MAJOR / MINOR / MINI.
+- Bỏ panel Buffalo cũ bên trái để reel rộng và sạch hơn.
+- Gold Buffalo Collection panel gọn lại.
+- Feature bar mới, ít rối hơn.
+- Control console mới: Credits / Bet / Spin / Win / Auto theo phong cách cabinet premium.
+- Desktop và mobile có layout riêng.
+
+PERFORMANCE:
+- Xóa 5 ảnh Buffalo base64 trùng lặp khỏi HTML, dùng asset file chung.
+- index.html giảm mạnh kích thước.
+- Pre-decode symbol assets để giảm giật ở các spin đầu.
+- Bỏ blur/filter khi reel đang quay.
+- Bỏ reel-shake chạy 80ms liên tục.
+- Bỏ drop-shadow/filter động trên symbol thắng.
+- Canvas FX render ở DPR 1, giới hạn particle thích ứng theo thiết bị.
+- Particle cap khoảng 34–82 thay vì hàng trăm.
+- FX chạy ~24–30 FPS tùy thiết bị.
+- Coin dùng sprite canvas pre-render thay vì vẽ gradient mỗi frame.
+- Giảm Buffalo DOM stampede/echo trên thiết bị yếu.
+- Free Games/Jackpot vẫn dùng hero, flash, coin, fireworks nhưng ưu tiên layer lớn thay vì spam particle.
+- Tắt nhiều backdrop-filter, animated shadow và decorative animation tốn GPU.
+
+Firebase / Admin / realtime:
+- Giữ nguyên cấu hình và dashboard DEV của bản trước.
