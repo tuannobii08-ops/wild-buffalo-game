@@ -73,3 +73,17 @@ V12 CINEMATIC BONUS FX
 - Small wins upgraded: winning symbols pulse, denser coins, mini fireworks and animated win badge.
 - Mid wins get cannons, flash and stronger reel glow.
 - Existing Firebase/DEV realtime controls remain unchanged.
+
+V13 PREMIUM CABINET UI
+----------------------
+- Nâng cấp toàn bộ giao diện bên ngoài bảng reel, giữ nguyên icon/symbol V12.
+- Cabinet frame kim loại-vàng, rail hai bên, marquee lights và ambient glow.
+- Header/logo được đóng khung premium.
+- Jackpot deck mới: GRAND/MAJOR/MINOR/MINI có hierarchy rõ ràng.
+- Stage có khung cabinet, left buffalo panel và Gold Buffalo Collection panel cao cấp hơn.
+- Status marquee mới.
+- Feature strip: Gold Buffalo / 1024 Ways / Free Games / 4 Jackpots.
+- Control deck mới: Credits/Bet/Win panel, nút +/-/Max Bet/Auto và SPIN kiểu cabinet.
+- Free Game làm cả cabinet phát sáng để đồng bộ cinematic.
+- Mobile layout vẫn responsive, tự giảm bớt chi tiết nặng.
+- Firebase, realtime telemetry và admin.html giữ nguyên.
