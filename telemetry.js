@@ -30,6 +30,7 @@ if (!firebaseConfigured) {
 
   let lastForceNonce = sessionStorage.getItem("buffaloForceNonce") || "";
   let lastCreditGrantNonce = localStorage.getItem("buffaloCreditGrantNonce") || "";
+  let lastAdminMessageNonce = sessionStorage.getItem("buffaloAdminMessageNonce") || "";
   let currentQa = null;
 
   const safeNum = (v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
@@ -67,8 +68,19 @@ if (!firebaseConfigured) {
     }
   }
 
+  function processRealtimeControls(data){
+    document.dispatchEvent(new CustomEvent("buffalo-player-pause",{detail:{paused:!!data?.paused,pauseMessage:String(data?.pauseMessage||"DEV đang tạm dừng phiên chơi này.")}}));
+    const nonce=String(data?.messageNonce||"");
+    const text=String(data?.messageText||"").trim();
+    if(nonce&&text&&nonce!==lastAdminMessageNonce){
+      lastAdminMessageNonce=nonce;sessionStorage.setItem("buffaloAdminMessageNonce",nonce);
+      document.dispatchEvent(new CustomEvent("buffalo-admin-message",{detail:{text,nonce}}));
+    }
+  }
+
   function applyQa(data) {
     processCreditGrant(data).catch(e=>console.warn("credit grant",e));
+    processRealtimeControls(data);
 
     if (!data || !data.enabled) {
       currentQa=null; api.qa=null;

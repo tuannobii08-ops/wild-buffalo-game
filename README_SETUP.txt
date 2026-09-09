@@ -53,3 +53,11 @@ V10 ADMIN CONTROLS:
 
 Firebase config đã được điền sẵn cho project buffalo-game-864b0.
 DEV email đã được điền sẵn trong firestore.rules.template.
+
+
+V11 FX + DEV PRO
+- Gold Storm canvas: rain/fountain/side cannons.
+- Big/Super/Mega/Grand Jackpot FX tiers.
+- Jackpot: 3-wave buffalo stampede + dense coins + meter flash.
+- Bonus mode + free game ticker + bonus total + collection milestone FX.
+- DEV Console Pro: realtime KPIs, search, player control, grant credits, visible QA test odds, force jackpot QA, pause/resume, realtime message, global settings, activity feed.
