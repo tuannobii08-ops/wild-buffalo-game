@@ -61,3 +61,15 @@ V11 FX + DEV PRO
 - Jackpot: 3-wave buffalo stampede + dense coins + meter flash.
 - Bonus mode + free game ticker + bonus total + collection milestone FX.
 - DEV Console Pro: realtime KPIs, search, player control, grant credits, visible QA test odds, force jackpot QA, pause/resume, realtime message, global settings, activity feed.
+
+
+V12 CINEMATIC BONUS FX
+----------------------
+- Free Games entry rebuilt as a ~6.2s cinematic sequence.
+- Large Buffalo hero appears in the center with animated gold rings.
+- Multi-wave fireworks + flash bursts + Gold Storm + coin fountain.
+- Buffalo echo/stampede accents around the screen.
+- Retrigger and Bonus Complete use dedicated cinematic variants.
+- Small wins upgraded: winning symbols pulse, denser coins, mini fireworks and animated win badge.
+- Mid wins get cannons, flash and stronger reel glow.
+- Existing Firebase/DEV realtime controls remain unchanged.
